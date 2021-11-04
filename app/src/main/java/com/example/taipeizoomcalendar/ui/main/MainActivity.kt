@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.recyclerViewMainZooCalendar.adapter = adapter
         binding.recyclerViewMainZooCalendar.layoutManager = LinearLayoutManager(this)
+        binding.refreshLayoutMainZooCalendar.setEnableOverScrollDrag(true)
+        binding.refreshLayoutMainZooCalendar.setEnableLoadMore(false)
+        binding.refreshLayoutMainZooCalendar.setEnableRefresh(false)
         
         with(viewModel){
             zooCalendarList.observe(this@MainActivity, ::handleZooCalendar)
